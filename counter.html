@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title></title>
+    <style>
+      main {
+        height: 100vh;
+        background-color: cornSilk;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        align-content: flex-start;
+      }
+
+      main div {
+        background-color: dodgerBlue;
+        border: solid;
+      }
+
+      .sm {
+        width: 3rem;
+        height: 3rem;
+      }
+
+      .md {
+        width: 6rem;
+        height: 6rem;
+      }
+
+      .lg {
+        width: 8rem;
+        height: 8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The counter is <span>0</span></h1>
+    <main></main>
+    <script>
+      setInterval(() => {
+        const span = document.querySelector("h1 > span");
+        span.innerText = span.innerText * 1 + 1; //multiply by 1 to turn it into a number
+      }, 1000);
+    </script>
+  </body>
+</html>
