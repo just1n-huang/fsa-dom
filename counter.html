@@ -37,9 +37,21 @@
     <h1>The counter is <span>0</span></h1>
     <main></main>
     <script>
-      setInterval(() => {
+      const interval = setInterval(() => {
         const span = document.querySelector("h1 > span");
-        span.innerText = span.innerText * 1 + 1; //multiply by 1 to turn it into a number
+        span.innerText = span.innerText * 1 + 1; // multiply by 1 to turn it into a number
+        const main = document.querySelector("main");
+        const div = document.createElement("div");
+        main.appendChild(div);
+        div.classList.add("sm");
+        if (main.children.length === 10) {
+          clearInterval(interval); // stops timer at 10
+          setTimeout(() => {
+            [...main.children].forEach((item) => {
+              item.parentNode.removeChild(item);
+            });
+          }, 500);
+        }
       }, 1000);
     </script>
   </body>
